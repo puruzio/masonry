@@ -187,7 +187,7 @@ function masonryDefinition( Outlayer, getSize ) {
 }
 
 // -------------------------- transport -------------------------- //
-else if (typeof exports === 'object') {
+if (typeof exports === 'object') {
   module.exports = masonryDefinition(
     require('outlayer'),
     require('get-size')
