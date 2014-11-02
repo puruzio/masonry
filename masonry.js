@@ -187,19 +187,18 @@ function masonryDefinition( Outlayer, getSize ) {
 }
 
 // -------------------------- transport -------------------------- //
-
-if ( typeof define === 'function' && define.amd ) {
+else if (typeof exports === 'object') {
+  module.exports = masonryDefinition(
+    require('outlayer'),
+    require('get-size')
+  );
+} else if ( typeof define === 'function' && define.amd ) {
   // AMD
   define( [
       'outlayer/outlayer',
       'get-size/get-size'
     ],
     masonryDefinition );
-} else if (typeof exports === 'object') {
-  module.exports = masonryDefinition(
-    require('outlayer'),
-    require('get-size')
-  );
 } else {
   // browser global
   window.Masonry = masonryDefinition(
