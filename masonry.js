@@ -7,8 +7,9 @@
  */
 
 ( function( window ) {
-
 'use strict';
+
+if (!window) return;
 
 // -------------------------- helpers -------------------------- //
 
@@ -207,4 +208,4 @@ if ( typeof define === 'function' && define.amd ) {
   );
 }
 
-})( window );
+})( typeof window !== 'undefined' ? window : null );
